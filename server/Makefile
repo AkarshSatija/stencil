@@ -13,6 +13,14 @@ build:
 clean:
 	rm -rf stencil dist/
 
+install-protoc:
+	@echo "> installing protobuf-compiler"
+	whoami
+	sudo apt-get update
+	sudo apt install -y protobuf-compiler
+	which protoc
+	protoc --version
+
 test:
 	go test ./... -coverprofile=coverage.out
 
@@ -21,3 +29,5 @@ test-coverage: test
 
 dist:
 	@bash ./scripts/build.sh
+
+test_ci: install-protoc test
