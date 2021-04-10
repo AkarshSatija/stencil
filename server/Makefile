@@ -15,7 +15,6 @@ clean:
 
 install-protoc:
 	@echo "> installing protobuf-compiler"
-	whoami
 	sudo apt-get update
 	sudo apt install -y protobuf-compiler
 	which protoc
