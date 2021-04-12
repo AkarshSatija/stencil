@@ -1,8 +1,9 @@
-name: Build and Release
+name: Release
+
 on:
   push:
     tags:
-      - "v*.*.*"
+      - 'v*'
 
 jobs:
   docker:
